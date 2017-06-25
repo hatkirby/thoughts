@@ -19,58 +19,52 @@
 
 body#main-body {
   background-color: #bfefff;
+  height: 100%;
 }
 
 #container {
-  margin: 5em auto 0;
-  width: 70%;
-  background-color: white;
+  height: 100%;
+  margin: 7em auto 0;
+  width: 66%;
   box-sizing: border-box;
-  -webkit-border-top-left-radius: 15px;
-  -webkit-border-top-right-radius: 15px;
-  -moz-border-radius-topleft: 15px;
-  -moz-border-radius-topright: 15px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
   min-width: 890px;
 }
 
 #banner {
+  background-image: image-url("walk_cycle.png");
+  background-repeat: repeat-x;
   width: 100%;
   padding: 1em;
   box-sizing: border-box;
-}
-
-#banner h1 {
-  text-align: center;
-  margin: 0;
-}
-
-#banner h1 a {
-  text-decoration: none;
-  color: black;
-}
-
-#banner h1 a:visited {
-  color: black;
+  text-indent: -9999px;
+  height: 80px;
+  margin-bottom: -80px;
+  position: relative;
+  top: -70px;
 }
 
 #main {
   display: -webkit-flex;
   display: flex;
+  height: 100%;
+  background-color: white;
 }
 
 #content {
-  width: 75%;
+  width: 70%;
   box-sizing: border-box;
+  padding-top: 1em;
 }
 
 #sidebar {
-  width: 25%;
   box-sizing: border-box;
-  padding-right: 1em;
+  padding: 1em;
+  width: 30%;
+  box-sizing: border-box;
   font-size: .75em;
-  color: #352712;
+  color: black;
+  height: 100%;
+  border-left: 1px solid #eee;
 }
 
 #sidebar h2 {
