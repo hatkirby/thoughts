@@ -17,7 +17,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
-body {
+body#main-body {
   background-color: #bfefff;
 }
 
@@ -75,4 +75,141 @@ body {
 
 #sidebar h2 {
   font-size: 1em;
+}
+
+#flash {
+  width: 100%;
+  text-align: center;
+  padding: .25em;
+  font-weight: bold
+}
+
+.flash-notice {
+  background-color: #fffde8;
+}
+
+.flash-alert {
+  background-color: #ff6a6a;
+}
+
+html {
+  height: 100%;
+}
+
+body#userdata-body {
+  background-color: #eeeeee;
+  height: 100%;
+}
+
+#userdata-container {
+  margin: 4em auto 0;
+  width: 25%;
+}
+
+#userdata-form {
+  background-color: #fefefe;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  padding: 1em;
+}
+
+#userdata-form .field {
+  margin-bottom: 1em;
+}
+
+#userdata-form .field label {
+  display: block;
+  margin-bottom: .25em;
+}
+
+#userdata-form input[type=text], #userdata-form input[type=password] {
+  font-size: 24px;
+  padding: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.7);
+  -moz-box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.7);
+  box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.7);
+  border: 1px solid #ddd;
+  outline: 0;
+  border-radius: 0;
+}
+
+.remember-me-field {
+  float: left;
+}
+
+.submit-field {
+  text-align: right;
+}
+
+.userdata-link {
+  margin: 1em;
+}
+
+.userdata-link a {
+  text-decoration: none;
+}
+
+.userdata-link a:hover {
+  text-decoration: underline;
+}
+
+#userdata-form, .userdata-link a, .userdata-link a:visited {
+  color: #555d66;
+}
+
+#userdata-form label, .userdata-link a {
+  font-size: .75em;
+}
+
+#userdata-flash {
+  color: black;
+  background-color: white;
+  padding: .75em;
+  margin-bottom: 2em;
+  font-size: .8em;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+
+.userdata-flash-alert {
+  border-left: 5px solid red;
+}
+
+.userdata-flash-notice {
+  border-left: 5px solid green;
+}
+
+.userdata-flash-tag {
+  font-weight: bold;
+}
+
+.sidebar-module + .sidebar-module {
+  margin-top: 2em;
+}
+
+.sidebar-module ul {
+  padding-left: 0;
+}
+
+.sidebar-module li {
+  list-style-type: none;
+}
+
+.sidebar-module a {
+  text-decoration: none;
+}
+
+.sidebar-module a:hover {
+  text-decoration: underline;
+}
+
+.sidebar-module a:visited {
+  color: #352712;
 }
