@@ -23,8 +23,7 @@ body {
 
 #container {
   margin: 5em auto 0;
-  width: 50%;
-  border: 1px solid black;
+  width: 70%;
   background-color: white;
   box-sizing: border-box;
   -webkit-border-top-left-radius: 15px;
@@ -33,11 +32,11 @@ body {
   -moz-border-radius-topright: 15px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  min-width: 890px;
 }
 
 #banner {
   width: 100%;
-  border-bottom: 1px solid black;
   padding: 1em;
   box-sizing: border-box;
 }
@@ -64,11 +63,16 @@ body {
 #content {
   width: 75%;
   box-sizing: border-box;
-  border-right: 1px solid black;
 }
 
 #sidebar {
   width: 25%;
   box-sizing: border-box;
   padding-right: 1em;
+  font-size: .75em;
+  color: #352712;
+}
+
+#sidebar h2 {
+  font-size: 1em;
 }
