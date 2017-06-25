@@ -1,0 +1,61 @@
+// Place all the styles related to the Records controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#records {
+  padding: 0;
+  margin: 0 1em;
+
+  & > li {
+    display: block;
+    padding: .25em 0;
+
+    .description {
+      a {
+        text-decoration: none;
+        color: black;
+        font-family: 'Inconsolata', monospace;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:visited {
+          color: black;
+        }
+      }
+    }
+
+    .tags {
+      margin: .25em;
+      display: flex;
+      padding-left: 0;
+
+      li {
+        display: inline;
+        font-size: .75em;
+        font-family: 'Inconsolata', monospace;
+        padding: .25em;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+
+        &.record-date {
+          background-color: #fef1bf;
+        }
+
+        &.entry-type {
+          text-transform: uppercase;
+
+          &.entry-type-blog {
+            background-color: #90fefb;
+          }
+        }
+
+        & + li {
+          margin-left: 1em;
+        }
+      }
+    }
+  }
+}

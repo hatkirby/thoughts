@@ -19,5 +19,8 @@
 
 /node_modules
 /yarn-error.log
+/tmux*.log
+*.swp
+tags
 
 .byebug_history

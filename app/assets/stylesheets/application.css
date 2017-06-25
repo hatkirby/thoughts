@@ -10,6 +10,65 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require normalize-rails
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+body {
+  background-color: #bfefff;
+}
+
+#container {
+  margin: 5em auto 0;
+  width: 50%;
+  border: 1px solid black;
+  background-color: white;
+  box-sizing: border-box;
+  -webkit-border-top-left-radius: 15px;
+  -webkit-border-top-right-radius: 15px;
+  -moz-border-radius-topleft: 15px;
+  -moz-border-radius-topright: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#banner {
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+#banner h1 {
+  text-align: center;
+  margin: 0;
+}
+
+#banner h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+#banner h1 a:visited {
+  color: black;
+}
+
+#main {
+  display: -webkit-flex;
+  display: flex;
+}
+
+#content {
+  width: 75%;
+  box-sizing: border-box;
+  border-right: 1px solid black;
+}
+
+#sidebar {
+  width: 25%;
+  box-sizing: border-box;
+  padding-right: 1em;
+}
