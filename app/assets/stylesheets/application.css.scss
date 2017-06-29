@@ -34,9 +34,15 @@ body#main-body {
   display: flex;
 }
 
+@keyframes trottingPonies {
+  from { background-position-x: 0px; }
+  to { background-position-x: -1280px; }
+}
+
 #banner {
   background-image: image-url("walk_cycle.png");
   background-repeat: repeat-x;
+  animation: trottingPonies 1s steps(16) infinite;
   width: 100%;
   padding: 1em;
   box-sizing: border-box;
