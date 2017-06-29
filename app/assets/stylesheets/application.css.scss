@@ -27,9 +27,11 @@ body#main-body {
 #container {
   height: 100%;
   margin: 7em auto 0;
-  width: 66%;
+  width: 75%; /* 66% */
   box-sizing: border-box;
   min-width: 890px;
+  display: -webkit-flex;
+  display: flex;
 }
 
 #banner {
@@ -43,17 +45,23 @@ body#main-body {
   margin-bottom: -80px;
   position: relative;
   top: -70px;
+
+  a {
+    display: block;
+    width: 100%;
+    height: 55px;
+  }
 }
 
 #main {
-  display: -webkit-flex;
-  display: flex;
-  height: 100%;
   background-color: white;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  width: 75%;
 }
 
 #content {
-  width: 70%;
   box-sizing: border-box;
   padding-top: 1em;
 }
@@ -61,11 +69,9 @@ body#main-body {
 #sidebar {
   box-sizing: border-box;
   padding: 1em;
-  width: 30%;
-  box-sizing: border-box;
+  width: 25%;
   font-size: .75em;
   color: black;
-  height: 100%;
   border-left: 1px solid #eee;
 }
 
@@ -86,10 +92,6 @@ body#main-body {
 
 .flash-alert {
   background-color: #ff6a6a;
-}
-
-html {
-  height: 100%;
 }
 
 body#userdata-body {
