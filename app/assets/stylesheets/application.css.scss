@@ -16,6 +16,8 @@
  */
 
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
 body#main-body {
   background-color: #bfefff;
@@ -206,4 +208,18 @@ body#userdata-body {
 
 .sidebar-module a:visited {
   color: #352712;
+}
+
+.breadcrumb {
+  margin-left: 1em;
+
+  a, a:visited {
+    color: #555d66;
+    text-decoration: none;
+    font-size: .75em;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }

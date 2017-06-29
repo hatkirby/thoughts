@@ -1,3 +1,57 @@
 // Place all the styles related to the Entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#blog-post {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 3em;
+
+  h2 {
+    font-size: 45px;
+    line-height: 48px;
+    margin-top: .5em;
+  }
+
+  h3 {
+    font-size: 37px;
+    line-height: 42px;
+  }
+
+  h2, h3 {
+    font-family: 'Slabo 27px', serif;
+    margin-bottom: 0;
+    font-weight: normal;
+  }
+
+  #blog-content {
+    hyphens: auto;
+    word-wrap: break-word;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+
+      &, &:visited {
+        color: #ee2c2c;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        color: #9ea1ad;
+      }
+    }
+
+    li {
+      & + li {
+        margin-top: 1em;
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
