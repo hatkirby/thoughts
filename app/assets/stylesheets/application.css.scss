@@ -32,6 +32,7 @@ body#main-body {
   min-width: 890px;
   display: -webkit-flex;
   display: flex;
+  flex-direction: row-reverse;
 }
 
 @keyframes trottingPonies {
@@ -65,24 +66,12 @@ body#main-body {
   -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   width: 75%;
+  min-width: 720px
 }
 
 #content {
   box-sizing: border-box;
   padding-top: 1em;
-}
-
-#sidebar {
-  box-sizing: border-box;
-  padding: 1em;
-  width: 25%;
-  font-size: .75em;
-  color: black;
-  border-left: 1px solid #eee;
-}
-
-#sidebar h2 {
-  font-size: 1em;
 }
 
 #flash {
@@ -194,12 +183,42 @@ body#userdata-body {
   font-weight: bold;
 }
 
-.sidebar-module + .sidebar-module {
-  margin-top: 2em;
+#sidebar {
+  box-sizing: border-box;
+  width: 25%;
+  font-size: .75em;
+  color: black;
+  border-left: 1px solid #eee;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+#sidebar h2 {
+  font-size: 1em;
+  margin: 0;
+}
+
+.sidebar-module {
+  padding: 1em;
+  margin-top: 1em;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+}
+
+.sidebar-module:nth-child(2n+1) {
+  background-color: #feff8f;
+}
+
+.sidebar-module:nth-child(2n+2) {
+  background-color: #8fefab;
+}
+
+.sidebar-module p {
+  margin-bottom: 0;
 }
 
 .sidebar-module ul {
   padding-left: 0;
+  margin-bottom: 0;
 }
 
 .sidebar-module li {
