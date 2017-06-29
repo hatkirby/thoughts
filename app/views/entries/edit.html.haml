@@ -1,0 +1,11 @@
+= form_for @entry, url: @entry.path do |f|
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :body
+    = f.text_area :body
+  .field
+    = f.label :slug
+    = f.text_field :slug
+  = f.submit
