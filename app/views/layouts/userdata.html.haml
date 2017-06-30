@@ -3,16 +3,16 @@
   %head
     %title Thoughts
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'userdata', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body#userdata-body
-    #userdata-container
+  %body
+    #container
       - if flash[:alert]
-        #userdata-flash.userdata-flash-alert
-          %span.userdata-flash-tag ERROR:
+        #flash.flash-alert
+          %span.flash-tag ERROR:
           = flash.alert
       - if flash[:notice]
-        #userdata-flash.userdata-flash-notice
-          %span.userdata-flash-tag NOTICE:
+        #flash.flash-notice
+          %span.flash-tag NOTICE:
           = flash.notice
       = yield

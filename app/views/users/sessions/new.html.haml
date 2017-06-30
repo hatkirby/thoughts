@@ -1,4 +1,4 @@
-#userdata-form
+#principal
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
       = f.label :login
@@ -11,5 +11,5 @@
       = f.label :remember_me
     .submit-field
       = f.submit "Log in"
-.userdata-link= link_to "Forgot your password?", new_password_path(resource_name)
-.userdata-link= link_to "← Back to thoughts", root_url
+.navigation= link_to "Forgot your password?", new_password_path(resource_name)
+.navigation= link_to "← Back to thoughts", root_url

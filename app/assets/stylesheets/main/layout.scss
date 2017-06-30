@@ -1,0 +1,136 @@
+body#main-body {
+  background-color: #bfefff;
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+  margin: 7em auto 0;
+  width: 75%; /* 66% */
+  box-sizing: border-box;
+  min-width: 890px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@keyframes trottingPonies {
+  from { background-position-x: 0px; }
+  to { background-position-x: -1280px; }
+}
+
+#banner {
+  background-image: image-url("walk_cycle.png");
+  background-repeat: repeat-x;
+  animation: trottingPonies 1s steps(16) infinite;
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  text-indent: -9999px;
+  height: 80px;
+  margin-bottom: -80px;
+  position: relative;
+  top: -70px;
+
+  a {
+    display: block;
+    width: 100%;
+    height: 55px;
+  }
+}
+
+#main {
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  width: 75%;
+  min-width: 720px
+}
+
+#content {
+  box-sizing: border-box;
+  padding-top: 1em;
+}
+
+#flash {
+  width: 100%;
+  text-align: center;
+  padding: .25em;
+  font-weight: bold
+}
+
+.flash-notice {
+  background-color: #fffde8;
+}
+
+.flash-alert {
+  background-color: #ff6a6a;
+}
+
+#sidebar {
+  box-sizing: border-box;
+  width: 25%;
+  font-size: .75em;
+  color: black;
+  border-left: 1px solid #eee;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+#sidebar h2 {
+  font-size: 1em;
+  margin: 0;
+}
+
+.sidebar-module {
+  padding: 1em;
+  margin-top: 1em;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+}
+
+.sidebar-module:nth-child(2n+1) {
+  background-color: #feff8f;
+}
+
+.sidebar-module:nth-child(2n+2) {
+  background-color: #8fefab;
+}
+
+.sidebar-module p {
+  margin-bottom: 0;
+}
+
+.sidebar-module ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.sidebar-module li {
+  list-style-type: none;
+}
+
+.sidebar-module a {
+  text-decoration: none;
+}
+
+.sidebar-module a:hover {
+  text-decoration: underline;
+}
+
+.sidebar-module a:visited {
+  color: #352712;
+}
+
+.breadcrumb {
+  margin-left: 1em;
+
+  a, a:visited {
+    color: #555d66;
+    text-decoration: none;
+    font-size: .75em;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
