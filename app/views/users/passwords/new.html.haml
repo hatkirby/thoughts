@@ -1,0 +1,11 @@
+%h2 Forgot your password?
+= devise_error_messages!
+#principal
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+    .field
+      = f.label :email
+      = f.email_field :email, autofocus: true
+    .submit-field
+      = f.submit "Submit"
+.navigation= link_to "Log in", new_session_path(resource_name)
+.navigation= link_to "← Back to thoughts", root_url

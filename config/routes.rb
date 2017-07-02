@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   end
 
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords'
+  }
 
   root "records#index"
 

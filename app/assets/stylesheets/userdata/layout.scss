@@ -27,7 +27,7 @@ body {
     }
   }
 
-  input[type=text], input[type=password] {
+  input[type=text], input[type=password], input[type=email] {
     font-size: 24px;
     padding: 3px;
     width: 100%;
@@ -69,7 +69,7 @@ body {
   font-size: .75em;
 }
 
-#flash {
+#flash, #error_explanation li {
   color: black;
   background-color: white;
   padding: .75em;
@@ -80,7 +80,7 @@ body {
   box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 
-.flash-alert {
+.flash-alert, #error_explanation li {
   border-left: 5px solid red;
 }
 
@@ -90,4 +90,19 @@ body {
 
 .flash-tag {
   font-weight: bold;
+}
+
+#error_explanation {
+  h2 {
+    display: none;
+  }
+
+  ul {
+    margin-top: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
 }
