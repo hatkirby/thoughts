@@ -12,7 +12,7 @@ body {
   background-color: #7bf;
 
   a {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     font-size: 2em;
     margin: .25em 1em;
@@ -187,4 +187,48 @@ body {
     box-sizing: border-box;
     border: 1px solid #ddd;
   }
+}
+
+#errors {
+  padding-left: 0;
+  border: 2px solid red;
+
+  h3 {
+    margin: 0 0 .25em 0;
+    text-align: center;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1em;
+    font-size: 0.75em;
+  }
+
+  li {
+    display: block;
+  }
+}
+
+#flash {
+  display: inline-block;
+  color: black;
+  background-color: white;
+  padding: .5em .75em;
+  font-size: .8em;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  vertical-align: text-bottom;
+}
+
+.flash-tag {
+  font-weight: bold;
+}
+
+.flash-alert {
+  border-left: 5px solid red;
+}
+
+.flash-notice {
+  border-left: 5px solid green;
 }

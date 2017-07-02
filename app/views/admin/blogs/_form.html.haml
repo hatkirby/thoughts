@@ -1,7 +1,3 @@
-- if f.object.errors.any?
-  %ul#errors
-    - f.object.errors.full_messages.each do |error|
-      %li= error
 %fieldset#content
   .title-field
     = f.label :title
@@ -13,6 +9,12 @@
     = f.label :body
     = f.cktext_area :body
 %fieldset#details
+  - if f.object.errors.any?
+    #errors.details-module
+      %h3 Error!
+      %ul
+        - f.object.errors.full_messages.each do |error|
+          %li= error
   .details-module
     = f.fields_for :records, Record.new do |builder|
       .should-create-record-field
