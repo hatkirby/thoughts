@@ -1,0 +1,27 @@
+!!! 5
+%html
+  %head
+    %title Thoughts - Admin
+    = csrf_meta_tags
+    = stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    #banner= link_to "Thoughts", root_url
+    #container
+      %ul#sidebar
+        %li{major_sidebar_attrs("dashboard")}
+          = link_to "Dashboard", admin_url, class: "major-link"
+        %li{major_sidebar_attrs("blogs")}
+          = link_to "Blogs", admin_blogs_url, class: "major-link"
+          %ul.minors
+            %li.minor= link_to "New blog", new_admin_blog_url
+      #main
+        - if flash[:alert]
+          #flash.flash-alert
+            %span.flash-tag ERROR:
+            = flash.alert
+        - if flash[:notice]
+          #flash.flash-notice
+            %span.flash-tag NOTICE:
+            = flash.notice
+        = yield

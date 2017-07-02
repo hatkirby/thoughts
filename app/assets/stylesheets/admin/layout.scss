@@ -1,0 +1,190 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+#banner {
+  background-color: #7bf;
+
+  a {
+    display: block;
+    text-decoration: none;
+    font-size: 2em;
+    margin: .25em 1em;
+
+    &, &:visited {
+      color: black;
+    }
+  }
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+#sidebar {
+  width: 12%;
+  background-color: #333;
+  margin: 0;
+  padding: 1em 0;
+
+  .major {
+    display: block;
+    color: white;
+
+    &.active {
+      background-color: #648;
+    }
+
+    &.inactive {
+      .minors {
+        display: none;
+      }
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+
+      &, &:visited {
+        color: #ddd;
+      }
+    }
+
+    .minors {
+      display: block;
+      background-color: #666;
+    }
+
+    .minor {
+      list-style-type: none;
+      font-size: small;
+    }
+
+    .major-link, .minors {
+      padding: .25em 1em;
+    }
+  }
+}
+
+#main {
+  width: 88%;
+  padding: 1em;
+  background-color: #eee;
+}
+
+#blog-form {
+  display: flex;
+
+  fieldset {
+    border: 0;
+  }
+
+  #content {
+    width: 77%;
+  }
+
+  #details {
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .title-field {
+    label {
+      display: none;
+    }
+
+    input {
+      width: 100%;
+      font-size: 1.5em;
+      box-sizing: border-box;
+    }
+  }
+
+  .slug-field {
+    display: flex;
+    font-size: 0.75em;
+    margin-bottom: 1em;
+
+    input {
+      padding: 0;
+      border: 0;
+      color: #666;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #eee;
+      text-decoration: underline;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
+  .body-field {
+    label {
+      display: none;
+    }
+  }
+}
+
+#entries {
+  border-spacing: 0;
+  width: 100%;
+
+  th {
+    text-align: left;
+    padding: .25em;
+    font-weight: normal;
+    background-color: #35a;
+    color: #eee;
+  }
+
+  tr {
+    &.even {
+      background-color: #fff;
+    }
+
+    &.odd {
+      background-color: #edf;
+    }
+  }
+
+  td {
+    padding: .25em;
+  }
+}
+
+.details-module {
+  background-color: white;
+  border-radius: 5px;
+  padding: .5em;
+  margin-bottom: 1em;
+}
+
+.should-create-record-field {
+  label {
+    font-size: .75em;
+  }
+}
+
+.record-description-field {
+  display: none;
+  margin-top: 1em;
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+  }
+}

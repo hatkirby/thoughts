@@ -1,0 +1,2 @@
+= form_for @blog, url: admin_blog_url(@blog), html: { id: "blog-form" } do |f|
+  = render partial: "form", locals: { f: f }

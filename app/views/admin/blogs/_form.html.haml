@@ -1,0 +1,23 @@
+- if f.object.errors.any?
+  %ul#errors
+    - f.object.errors.full_messages.each do |error|
+      %li= error
+%fieldset#content
+  .title-field
+    = f.label :title
+    = f.text_field :title, placeholder: "Title"
+  .slug-field
+    = f.label :slug, "https://feffernoo.se/says/"
+    = f.text_field :slug, placeholder: "insert-slug-here"
+  .body-field
+    = f.label :body
+    = f.cktext_area :body
+%fieldset#details
+  .details-module
+    = f.fields_for :records, Record.new do |builder|
+      .should-create-record-field
+        = builder.check_box :_destroy, {checked: false}, "0", "1"
+        = builder.label :_destroy, "Create record?"
+      .record-description-field
+        = builder.text_area :description, placeholder: "record text"
+  .details-module= f.submit
