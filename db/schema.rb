@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629184901) do
+ActiveRecord::Schema.define(version: 20170703013609) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20170629184901) do
   create_table "entries", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.string "directory", null: false
     t.string "slug", null: false
     t.string "type", null: false
     t.datetime "created_at", null: false
@@ -37,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170629184901) do
 
   create_table "records", force: :cascade do |t|
     t.text "description"
-    t.string "recordable_type"
+    t.string "recordable_type", limit: 191
     t.integer "recordable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,10 +44,10 @@ ActiveRecord::Schema.define(version: 20170629184901) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "login", default: "", null: false
-    t.string "email", default: "", null: false
+    t.string "login", limit: 191, default: "", null: false
+    t.string "email", limit: 191, default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
+    t.string "reset_password_token", limit: 191
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false

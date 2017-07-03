@@ -27,3 +27,4 @@ tags
 .DS_Store
 *.swo
 /public/uploads
+config/database.yml
