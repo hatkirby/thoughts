@@ -1,7 +1,9 @@
 # This migration comes from pokeviewer (originally 20171003154157)
 class RenamePokemonMetLocation < ActiveRecord::Migration[5.1]
   def up
-    add_column :pokeviewer_pokemon, :location_id, :integer, null: true
+    change_table :pokeviewer_pokemon do |t|
+      t.references :location, null: true
+    end
 
     add_foreign_key :pokeviewer_pokemon, :pokeviewer_locations,
       column: :location_id

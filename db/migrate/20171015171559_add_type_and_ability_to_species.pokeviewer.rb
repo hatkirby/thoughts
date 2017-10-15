@@ -4,8 +4,8 @@ class AddTypeAndAbilityToSpecies < ActiveRecord::Migration[5.1]
     change_table :pokeviewer_species do |t|
       t.string :type_1, null: false, default: ""
       t.string :type_2
-      t.integer :ability_1_id, null: false, default: 0
-      t.integer :ability_2_id
+      t.references :ability_1, null: false, default: 0
+      t.references :ability_2
     end
 
     change_column_default :pokeviewer_species, :type_1, nil
