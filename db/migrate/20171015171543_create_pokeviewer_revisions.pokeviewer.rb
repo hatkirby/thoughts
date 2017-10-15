@@ -34,19 +34,19 @@ class CreatePokeviewerRevisions < ActiveRecord::Migration[5.1]
 
     add_index :pokeviewer_revisions, [:pokemon_id, :sequential_id], unique: true
 
-    add_foreign_key :pokeviewer_revisions, :pokewalker_pokemon,
+    add_foreign_key :pokeviewer_revisions, :pokeviewer_pokemon,
       column: :pokemon_id
 
-    add_foreign_key :pokeviewer_revisions, :pokewalker_moves,
+    add_foreign_key :pokeviewer_revisions, :pokeviewer_moves,
       column: :move_1_id
 
-    add_foreign_key :pokeviewer_revisions, :pokewalker_moves,
+    add_foreign_key :pokeviewer_revisions, :pokeviewer_moves,
       column: :move_2_id
 
-    add_foreign_key :pokeviewer_revisions, :pokewalker_moves,
+    add_foreign_key :pokeviewer_revisions, :pokeviewer_moves,
       column: :move_3_id
 
-    add_foreign_key :pokeviewer_revisions, :pokewalker_moves,
+    add_foreign_key :pokeviewer_revisions, :pokeviewer_moves,
       column: :move_4_id
   end
 end
