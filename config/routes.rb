@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   root "records#index"
 
   get 'says/:slug', to: 'entries#show'
+
+  mount Pokeviewer::Engine => '/poke3'
 end
