@@ -4,7 +4,7 @@ class RenameRevisionHoldItem < ActiveRecord::Migration[5.1]
     remove_column :pokeviewer_revisions, :hold_item, :integer
 
     change_table :pokeviewer_revisions do |t|
-      t.integer :item_id
+      t.references :item
     end
 
     add_foreign_key :pokeviewer_revisions, :pokeviewer_items, column: :item_id
