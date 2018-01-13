@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015171559) do
+ActiveRecord::Schema.define(version: 20180113211911) do
 
-  create_table "ckeditor_assets", force: :cascade do |t|
+  create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
     t.integer "data_file_size"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20171015171559) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
-  create_table "entries", force: :cascade do |t|
+  create_table "entries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "title"
     t.text "body"
     t.string "slug", null: false
@@ -34,21 +34,21 @@ ActiveRecord::Schema.define(version: 20171015171559) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pokeviewer_abilities", force: :cascade do |t|
-    t.string "name", limit: 191, null: false
+  create_table "pokeviewer_abilities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.string "name", null: false
     t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_pokeviewer_abilities_on_name", unique: true
   end
 
-  create_table "pokeviewer_gift_ribbons", force: :cascade do |t|
+  create_table "pokeviewer_gift_ribbons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "pokeviewer_items", force: :cascade do |t|
+  create_table "pokeviewer_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name", null: false
     t.boolean "tm", default: false, null: false
     t.integer "move_id"
@@ -60,14 +60,14 @@ ActiveRecord::Schema.define(version: 20171015171559) do
     t.index ["move_id"], name: "index_pokeviewer_items_on_move_id"
   end
 
-  create_table "pokeviewer_locations", force: :cascade do |t|
+  create_table "pokeviewer_locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "pokeviewer_moves", force: :cascade do |t|
-    t.string "name", limit: 191, null: false
+  create_table "pokeviewer_moves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.string "name", null: false
     t.integer "pp", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -78,11 +78,10 @@ ActiveRecord::Schema.define(version: 20171015171559) do
     t.index ["name"], name: "index_pokeviewer_moves_on_name", unique: true
   end
 
-  create_table "pokeviewer_pokemon", force: :cascade do |t|
-    t.string "uuid", limit: 191, null: false
-    t.integer "species_id", null: false
+  create_table "pokeviewer_pokemon", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.string "uuid", null: false
     t.integer "trainer_id"
-    t.string "key", limit: 191
+    t.string "key"
     t.string "ot_name", null: false
     t.integer "ot_number", null: false
     t.string "met_type", null: false
@@ -100,12 +99,11 @@ ActiveRecord::Schema.define(version: 20171015171559) do
     t.integer "location_id"
     t.string "pokeball", null: false
     t.index ["key"], name: "index_pokeviewer_pokemon_on_key", unique: true
-    t.index ["species_id"], name: "index_pokeviewer_pokemon_on_species_id"
     t.index ["trainer_id"], name: "index_pokeviewer_pokemon_on_trainer_id"
     t.index ["uuid"], name: "index_pokeviewer_pokemon_on_uuid", unique: true
   end
 
-  create_table "pokeviewer_revisions", force: :cascade do |t|
+  create_table "pokeviewer_revisions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.integer "pokemon_id", null: false
     t.integer "sequential_id", null: false
     t.string "nickname", null: false
@@ -151,16 +149,18 @@ ActiveRecord::Schema.define(version: 20171015171559) do
     t.boolean "national_ribbon", default: false
     t.boolean "earth_ribbon", default: false
     t.boolean "world_ribbon", default: false
+    t.bigint "species_id", null: false
     t.index ["move_1_id"], name: "index_pokeviewer_revisions_on_move_1_id"
     t.index ["move_2_id"], name: "index_pokeviewer_revisions_on_move_2_id"
     t.index ["move_3_id"], name: "index_pokeviewer_revisions_on_move_3_id"
     t.index ["move_4_id"], name: "index_pokeviewer_revisions_on_move_4_id"
     t.index ["pokemon_id", "sequential_id"], name: "index_pokeviewer_revisions_on_pokemon_id_and_sequential_id", unique: true
     t.index ["pokemon_id"], name: "index_pokeviewer_revisions_on_pokemon_id"
+    t.index ["species_id"], name: "index_pokeviewer_revisions_on_species_id"
   end
 
-  create_table "pokeviewer_species", force: :cascade do |t|
-    t.string "name", limit: 191, null: false
+  create_table "pokeviewer_species", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "type_1", null: false
@@ -170,9 +170,9 @@ ActiveRecord::Schema.define(version: 20171015171559) do
     t.index ["name"], name: "index_pokeviewer_species_on_name", unique: true
   end
 
-  create_table "pokeviewer_trainers", force: :cascade do |t|
+  create_table "pokeviewer_trainers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "game", null: false
-    t.string "name", limit: 191, null: false
+    t.string "name", null: false
     t.integer "number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -207,20 +207,20 @@ ActiveRecord::Schema.define(version: 20171015171559) do
     t.index ["world_ribbon_id"], name: "index_pokeviewer_trainers_on_world_ribbon_id"
   end
 
-  create_table "records", force: :cascade do |t|
+  create_table "records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.text "description"
-    t.string "recordable_type", limit: 191
+    t.string "recordable_type"
     t.integer "recordable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recordable_type", "recordable_id"], name: "index_records_on_recordable_type_and_recordable_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "login", limit: 191, default: "", null: false
-    t.string "email", limit: 191, default: "", null: false
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.string "login", default: "", null: false
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token", limit: 191
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
@@ -230,11 +230,12 @@ ActiveRecord::Schema.define(version: 20171015171559) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "pokeviewer_token", limit: 191
+    t.string "pokeviewer_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["login"], name: "index_users_on_login", unique: true
     t.index ["pokeviewer_token"], name: "index_users_on_pokeviewer_token", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "pokeviewer_revisions", "pokeviewer_species", column: "species_id"
 end
