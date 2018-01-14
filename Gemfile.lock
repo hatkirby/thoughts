@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/hatkirby/pokeviewer.git
-  revision: 91eeaa33a436ba2233f1fe7509f7c104db1d4533
+  revision: 30cd66e1521bc760df45908adb2f7d3ba6683900
   specs:
     pokeviewer (0.1.0)
       activerecord-diff
