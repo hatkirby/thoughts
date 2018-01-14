@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113211911) do
+ActiveRecord::Schema.define(version: 20180114181813) do
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "data_file_name", null: false
@@ -98,6 +98,8 @@ ActiveRecord::Schema.define(version: 20180113211911) do
     t.integer "slot"
     t.integer "location_id"
     t.string "pokeball", null: false
+    t.bigint "current_id"
+    t.index ["current_id"], name: "index_pokeviewer_pokemon_on_current_id"
     t.index ["key"], name: "index_pokeviewer_pokemon_on_key", unique: true
     t.index ["trainer_id"], name: "index_pokeviewer_pokemon_on_trainer_id"
     t.index ["uuid"], name: "index_pokeviewer_pokemon_on_uuid", unique: true
@@ -237,5 +239,6 @@ ActiveRecord::Schema.define(version: 20180113211911) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "pokeviewer_pokemon", "pokeviewer_revisions", column: "current_id"
   add_foreign_key "pokeviewer_revisions", "pokeviewer_species", column: "species_id"
 end
