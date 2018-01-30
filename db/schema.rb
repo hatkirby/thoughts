@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114181813) do
+ActiveRecord::Schema.define(version: 20180130021851) do
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "data_file_name", null: false
@@ -76,6 +76,17 @@ ActiveRecord::Schema.define(version: 20180114181813) do
     t.string "frlg_description", null: false
     t.string "emerald_description"
     t.index ["name"], name: "index_pokeviewer_moves_on_name", unique: true
+  end
+
+  create_table "pokeviewer_pokedex_entries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.bigint "trainer_id"
+    t.bigint "species_id"
+    t.boolean "caught", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["species_id"], name: "index_pokeviewer_pokedex_entries_on_species_id"
+    t.index ["trainer_id", "species_id"], name: "index_pokeviewer_pokedex_entries_on_trainer_id_and_species_id", unique: true
+    t.index ["trainer_id"], name: "index_pokeviewer_pokedex_entries_on_trainer_id"
   end
 
   create_table "pokeviewer_pokemon", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
@@ -239,6 +250,8 @@ ActiveRecord::Schema.define(version: 20180114181813) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "pokeviewer_pokedex_entries", "pokeviewer_species", column: "species_id"
+  add_foreign_key "pokeviewer_pokedex_entries", "pokeviewer_trainers", column: "trainer_id"
   add_foreign_key "pokeviewer_pokemon", "pokeviewer_revisions", column: "current_id"
   add_foreign_key "pokeviewer_revisions", "pokeviewer_species", column: "species_id"
 end
