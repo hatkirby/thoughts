@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130021851) do
+ActiveRecord::Schema.define(version: 20180702214240) do
 
-  create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
+    t.string "title"
+    t.text "body"
+    t.string "slug", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
     t.integer "data_file_size"
@@ -25,16 +33,7 @@ ActiveRecord::Schema.define(version: 20180130021851) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
-  create_table "entries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
-    t.string "title"
-    t.text "body"
-    t.string "slug", null: false
-    t.string "type", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "pokeviewer_abilities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "pokeviewer_abilities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string "name", null: false
     t.string "description", null: false
     t.datetime "created_at", null: false
@@ -42,13 +41,13 @@ ActiveRecord::Schema.define(version: 20180130021851) do
     t.index ["name"], name: "index_pokeviewer_abilities_on_name", unique: true
   end
 
-  create_table "pokeviewer_gift_ribbons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "pokeviewer_gift_ribbons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "pokeviewer_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "pokeviewer_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string "name", null: false
     t.boolean "tm", default: false, null: false
     t.integer "move_id"
@@ -60,13 +59,13 @@ ActiveRecord::Schema.define(version: 20180130021851) do
     t.index ["move_id"], name: "index_pokeviewer_items_on_move_id"
   end
 
-  create_table "pokeviewer_locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "pokeviewer_locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "pokeviewer_moves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "pokeviewer_moves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string "name", null: false
     t.integer "pp", null: false
     t.datetime "created_at", null: false
@@ -78,7 +77,7 @@ ActiveRecord::Schema.define(version: 20180130021851) do
     t.index ["name"], name: "index_pokeviewer_moves_on_name", unique: true
   end
 
-  create_table "pokeviewer_pokedex_entries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "pokeviewer_pokedex_entries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.bigint "trainer_id"
     t.bigint "species_id"
     t.boolean "caught", default: false
@@ -89,7 +88,7 @@ ActiveRecord::Schema.define(version: 20180130021851) do
     t.index ["trainer_id"], name: "index_pokeviewer_pokedex_entries_on_trainer_id"
   end
 
-  create_table "pokeviewer_pokemon", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "pokeviewer_pokemon", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string "uuid", null: false
     t.integer "trainer_id"
     t.string "key"
@@ -116,7 +115,7 @@ ActiveRecord::Schema.define(version: 20180130021851) do
     t.index ["uuid"], name: "index_pokeviewer_pokemon_on_uuid", unique: true
   end
 
-  create_table "pokeviewer_revisions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "pokeviewer_revisions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.integer "pokemon_id", null: false
     t.integer "sequential_id", null: false
     t.string "nickname", null: false
@@ -172,7 +171,7 @@ ActiveRecord::Schema.define(version: 20180130021851) do
     t.index ["species_id"], name: "index_pokeviewer_revisions_on_species_id"
   end
 
-  create_table "pokeviewer_species", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "pokeviewer_species", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -183,7 +182,7 @@ ActiveRecord::Schema.define(version: 20180130021851) do
     t.index ["name"], name: "index_pokeviewer_species_on_name", unique: true
   end
 
-  create_table "pokeviewer_trainers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "pokeviewer_trainers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string "game", null: false
     t.string "name", null: false
     t.integer "number", null: false
@@ -220,7 +219,7 @@ ActiveRecord::Schema.define(version: 20180130021851) do
     t.index ["world_ribbon_id"], name: "index_pokeviewer_trainers_on_world_ribbon_id"
   end
 
-  create_table "records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.text "description"
     t.string "recordable_type"
     t.integer "recordable_id"
@@ -229,7 +228,7 @@ ActiveRecord::Schema.define(version: 20180130021851) do
     t.index ["recordable_type", "recordable_id"], name: "index_records_on_recordable_type_and_recordable_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string "login", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
