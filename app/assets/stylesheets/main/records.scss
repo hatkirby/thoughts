@@ -52,6 +52,10 @@
           &.entry-type-blog {
             background-color: #90fefb;
           }
+
+          &.entry-type-stream, &.entry-type-update {
+            background-color: #98FB98;
+          }
         }
 
         & + li {

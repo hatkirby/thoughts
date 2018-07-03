@@ -1,0 +1,22 @@
+%fieldset#content
+  .title-field
+    = f.label :title
+    = f.text_field :title, value: @stream.title, readonly: true
+  .body-field
+    = f.label :body
+    = f.cktext_area :body
+%fieldset#details
+  - if f.object.errors.any?
+    #errors.details-module
+      %h3 Error!
+      %ul
+        - f.object.errors.full_messages.each do |error|
+          %li= error
+  .details-module
+    = f.fields_for :records, Record.new do |builder|
+      .should-create-record-field
+        = builder.check_box :_destroy, {checked: false}, "0", "1"
+        = builder.label :_destroy, "Create record?"
+      .record-description-field
+        = builder.text_area :description, placeholder: "record text"
+  .details-module= f.submit

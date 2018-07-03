@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     get '/', to: 'dashboard#index'
 
     resources :blogs, except: [:show]
+
+    resources :streams, except: [:show] do
+      resources :updates, except: [:index, :show]
+    end
   end
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -15,6 +19,8 @@ Rails.application.routes.draw do
   root "records#index"
 
   get 'says/:slug', to: 'blogs#show'
+
+  get 'thinks/:slug', to: 'streams#show'
 
   mount Pokeviewer::Engine => '/poke3'
 end

@@ -1,0 +1,6 @@
+%article#stream-post
+  %h2#stream-title= stream.title
+  - unless stream.body.blank?
+    %header#stream-intro.entry-content= stream.body.html_safe
+  - unless stream.updates.empty?
+    = render stream.updates

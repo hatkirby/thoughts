@@ -1,0 +1,13 @@
+%table#entries
+  %tr
+    %th Title
+    %th Date created
+    %th
+  - @streams.each do |stream|
+    %tr{ class: cycle("even", "odd") }
+      %td= stream.title
+      %td= stream.created_at.strftime("%B %d, %Y, %l:%M%P")
+      %td
+        %ul.admin-actions
+          %li= link_to "Edit", edit_admin_stream_url(stream)
+          %li= link_to "Add Update", new_admin_stream_update_url(stream)
