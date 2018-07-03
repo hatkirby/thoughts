@@ -26,54 +26,87 @@
     margin-bottom: 0;
     font-weight: normal;
   }
+}
 
-  #blog-content {
-    hyphens: auto;
-    word-wrap: break-word;
+#stream-post {
+  h2 {
+    background-color: #98FB98;
+    display: block;
+    font-size: 20px;
     font-family: 'Roboto', sans-serif;
-    text-align: justify;
+    padding: 0.5em 20px;
+    border-top: 1px solid #7BCC70;
+    border-bottom: 1px solid #7BCC70;
+  }
 
-    a {
-      text-decoration: none;
-      font-weight: bold;
+  #stream-intro {
+    font-size: 16px;
+    margin: 0 20px;
+  }
 
-      &, &:visited {
-        color: #ee2c2c;
-      }
+  .stream-update {
+    font-size: 16px;
+    padding: 0 20px;
+    border-top: 1px solid #DEDEDE;
 
-      &:hover {
-        text-decoration: underline;
-        color: #9ea1ad;
-      }
+    .update-posted {
+      display: block;
+      font-style: italic;
+      text-align: right;
+      color: #989898;
+      font-size: 14px;
+      margin-top: .5em;
+    }
+  }
+}
+
+.entry-content {
+  hyphens: auto;
+  word-wrap: break-word;
+  text-align: justify;
+  font-family: 'Roboto', sans-serif;
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+
+    &, &:visited {
+      color: #ee2c2c;
     }
 
-    li {
-      & + li {
-        margin-top: 1em;
-      }
+    &:hover {
+      text-decoration: underline;
+      color: #9ea1ad;
     }
+  }
+
+  li {
+    & + li {
+      margin-top: 1em;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  figure {
+    background-color: #eee;
+    border: 1px solid #bbb;
+    padding: 0.25em 0.25em 0 0.25em;
+    font-size: 0.75em;
+    line-height: 24px;
 
     img {
-      max-width: 100%;
-      box-sizing: border-box;
+      display: block;
+      border: 1px solid #bbb;
     }
 
-    figure {
-      background-color: #eee;
-      border: 1px solid #bbb;
-      padding: 0.25em 0.25em 0 0.25em;
-      font-size: 0.75em;
-
-      img {
-        display: block;
-        border: 1px solid #bbb;
-      }
-
-      figcaption {
-        font-style: italic;
-        text-align: center;
-        margin: 0.25em;
-      }
+    figcaption {
+      font-style: italic;
+      text-align: center;
+      margin: 0.25em;
     }
   }
 }

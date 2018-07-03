@@ -80,7 +80,7 @@ body {
   background-color: #eee;
 }
 
-#blog-form {
+#entry-form {
   display: flex;
 
   fieldset {
@@ -162,6 +162,18 @@ body {
 
   td {
     padding: .25em;
+  }
+
+  .admin-actions {
+    margin: 0;
+
+    li {
+      display: inline;
+
+      &+li:before {
+        content: " - ";
+      }
+    }
   }
 }
 

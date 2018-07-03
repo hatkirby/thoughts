@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180702214240) do
+ActiveRecord::Schema.define(version: 20180702221133) do
 
   create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string "title"
@@ -228,6 +228,22 @@ ActiveRecord::Schema.define(version: 20180702214240) do
     t.index ["recordable_type", "recordable_id"], name: "index_records_on_recordable_type_and_recordable_id"
   end
 
+  create_table "streams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.string "title"
+    t.text "body"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "updates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.bigint "stream_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stream_id"], name: "index_updates_on_stream_id"
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string "login", default: "", null: false
     t.string "email", default: "", null: false
@@ -253,4 +269,5 @@ ActiveRecord::Schema.define(version: 20180702214240) do
   add_foreign_key "pokeviewer_pokedex_entries", "pokeviewer_trainers", column: "trainer_id"
   add_foreign_key "pokeviewer_pokemon", "pokeviewer_revisions", column: "current_id"
   add_foreign_key "pokeviewer_revisions", "pokeviewer_species", column: "species_id"
+  add_foreign_key "updates", "streams"
 end
