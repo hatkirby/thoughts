@@ -1,2 +1,6 @@
 .breadcrumb= link_to "← Back to home page", root_path
 = render @blog
+%footer#blog-footer
+  This entry was posted on
+  = succeed "." do
+    %time= @blog.created_at.strftime("%B #{@blog.created_at.day.ordinalize} %Y at %-I:%M:%S%P")

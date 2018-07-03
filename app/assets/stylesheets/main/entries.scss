@@ -28,6 +28,21 @@
   }
 }
 
+#blog-footer {
+  background-color: #f8f8f8;
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: #DDD;
+  color: #777;
+  padding: .75em 1em;
+  font-size: 0.9em;
+  margin-bottom: 1em;
+
+  time {
+    border-bottom: 1px dotted #777;
+  }
+}
+
 #stream-post {
   h2 {
     background-color: #98FB98;
