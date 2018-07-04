@@ -1,3 +1,3 @@
 %section.stream-update.entry-content{ id: "update-#{update.id}" }
-  %time.update-posted= update.created_at.strftime("%b #{update.created_at.day.ordinalize} %Y at %-I:%M:%S%P")
+  %time.update-posted= update.created_at.strftime("%B #{update.created_at.day.ordinalize}, %Y at %-I:%M:%S%P")
   = update.body.html_safe
