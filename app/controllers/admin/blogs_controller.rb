@@ -2,7 +2,11 @@ class Admin::BlogsController < Admin::AdminController
   before_action :set_section
 
   def index
-    @blogs = Blog.order(created_at: :desc)
+    @blogs = Blog.where(published: true).order(published_at: :desc)
+  end
+
+  def drafts
+    @blogs = Blog.where(published: false).order(updated_at: :desc)
   end
 
   def new
@@ -42,7 +46,7 @@ class Admin::BlogsController < Admin::AdminController
   private
 
     def blog_params
-      params.require(:blog).permit(:title, :body, :slug, records_attributes: [:description, :_destroy])
+      params.require(:blog).permit(:title, :body, :slug, :published, records_attributes: [:description, :_destroy])
     end
 
     def set_section

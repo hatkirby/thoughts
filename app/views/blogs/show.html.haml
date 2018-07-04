@@ -3,4 +3,4 @@
 %footer#blog-footer
   This entry was posted on
   = succeed "." do
-    %time= @blog.created_at.strftime("%B #{@blog.created_at.day.ordinalize}, %Y at %-I:%M:%S%P")
+    %time= @blog.posted_at.strftime("%B #{@blog.posted_at.day.ordinalize}, %Y at %-I:%M:%S%P")

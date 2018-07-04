@@ -1,10 +1,10 @@
 %table#entries
   %tr
     %th Title
-    %th Date published
+    %th Last updated
     %th
   - @blogs.each do |blog|
     %tr{ class: cycle("even", "odd") }
       %td= blog.title
-      %td= blog.published_at.strftime("%B %d, %Y, %l:%M%P")
+      %td= blog.updated_at.strftime("%B %d, %Y, %l:%M%P")
       %td= link_to "Edit", edit_admin_blog_url(blog)

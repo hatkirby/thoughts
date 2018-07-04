@@ -24,6 +24,7 @@
           = link_to "Blogs", admin_blogs_url, class: "major-link"
           %ul.minors
             %li.minor= link_to "New blog", new_admin_blog_url
+            %li.minor= link_to "Drafts", drafts_admin_blogs_url
         %li{major_sidebar_attrs("streams")}
           = link_to "Streams", admin_streams_url, class: "major-link"
           %ul.minors

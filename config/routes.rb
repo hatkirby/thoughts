@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/', to: 'dashboard#index'
 
-    resources :blogs, except: [:show]
+    resources :blogs, except: [:show] do
+      collection do
+        get 'drafts'
+      end
+    end
 
     resources :streams, except: [:show] do
       resources :updates, except: [:index, :show]

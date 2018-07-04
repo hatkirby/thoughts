@@ -16,6 +16,10 @@
         - f.object.errors.full_messages.each do |error|
           %li= error
   .details-module
+    .published-field
+      = f.check_box :published
+      = f.label :published
+  .details-module
     = f.fields_for :records, Record.new do |builder|
       .should-create-record-field
         = builder.check_box :_destroy, {checked: false}, "0", "1"
