@@ -15,6 +15,12 @@
       %ul
         - f.object.errors.full_messages.each do |error|
           %li= error
+  - unless f.object.new_record?
+    #entry-preview-link.details-module
+      - if f.object.published
+        = link_to "View post", blog_url(f.object.slug_was), target: "entry-preview"
+      - else
+        = link_to "Preview post", admin_blog_url(f.object), target: "entry-preview"
   .details-module
     .published-field
       = f.check_box :published

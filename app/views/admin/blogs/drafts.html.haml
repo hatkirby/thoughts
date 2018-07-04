@@ -7,4 +7,7 @@
     %tr{ class: cycle("even", "odd") }
       %td= blog.title
       %td= blog.updated_at.strftime("%B %d, %Y, %l:%M%P")
-      %td= link_to "Edit", edit_admin_blog_url(blog)
+      %td
+        %ul.admin-actions
+          %li= link_to "Preview", admin_blog_url(blog)
+          %li= link_to "Edit", edit_admin_blog_url(blog)

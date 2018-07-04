@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/', to: 'dashboard#index'
 
-    resources :blogs, except: [:show] do
+    resources :blogs do
       collection do
         get 'drafts'
       end
@@ -22,9 +22,9 @@ Rails.application.routes.draw do
 
   root "records#index"
 
-  get 'says/:slug', to: 'blogs#show'
+  get 'says/:slug', to: 'blogs#show', as: :blog
 
-  get 'thinks/:slug', to: 'streams#show'
+  get 'thinks/:slug', to: 'streams#show', as: :stream
 
   mount Pokeviewer::Engine => '/poke3'
 end

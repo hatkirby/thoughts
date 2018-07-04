@@ -9,6 +9,16 @@ class Admin::BlogsController < Admin::AdminController
     @blogs = Blog.where(published: false).order(updated_at: :desc)
   end
 
+  def show
+    @blog = Blog.find(params[:id])
+
+    if @blog.published
+      redirect_to blog_url(@blog.slug)
+    else
+      render layout: "application"
+    end
+  end
+
   def new
     @blog = Blog.new
   end

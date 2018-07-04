@@ -1,0 +1,5 @@
+= render partial: "blogs/blog", object: @blog
+%footer#blog-footer
+  This draft was last updated on
+  = succeed "." do
+    %time= @blog.updated_at.strftime("%B #{@blog.updated_at.day.ordinalize}, %Y at %-I:%M:%S%P")
