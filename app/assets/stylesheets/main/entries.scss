@@ -62,15 +62,17 @@
   .stream-update {
     font-size: 16px;
     padding: 0 20px;
-    border-top: 1px solid #DEDEDE;
 
     .update-posted {
       display: block;
       font-style: italic;
-      text-align: right;
-      color: #989898;
-      font-size: 14px;
-      margin-top: .5em;
+      background-color: #EAADEA;
+      font-size: 16px;
+      margin: .5em -20px;
+      padding: .5em 20px;
+      border-width: 1px 0 1px 0;
+      border-style: solid;
+      border-color: #DB70DB;
     }
   }
 }
