@@ -1,11 +1,9 @@
 class Blog < ApplicationRecord
-  has_many :records, as: :recordable, inverse_of: :recordable
+  include Recordable
 
   validates :title, presence: true
   validates :body, presence: true, if: :published
   validates :slug, presence: true, format: /\A[-a-z0-9]+\z/, if: :published
-
-  accepts_nested_attributes_for :records, allow_destroy: true
 
   before_validation :set_draft_title
   before_save :set_published_at
