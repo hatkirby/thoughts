@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title Thoughts - Admin
+    %title= content_for?(:title) ? "Thoughts - Admin - #{yield(:title)}" : "Thoughts - Admin"
     = csrf_meta_tags
     = stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

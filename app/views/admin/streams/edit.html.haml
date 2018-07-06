@@ -1,2 +1,3 @@
+- title "Editing #{@stream.title}"
 = form_for @stream, url: admin_stream_url(@stream), html: { id: "entry-form" } do |f|
   = render partial: "form", locals: { f: f }
