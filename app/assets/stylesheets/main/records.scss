@@ -60,6 +60,13 @@
         }
 
         &.entry-tag {
+          margin-left: 0.5em;
+
+          &:before {
+            content: "#";
+          }
+        }
+
         & + li {
           margin-left: 1em;
         }
