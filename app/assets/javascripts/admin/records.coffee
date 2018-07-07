@@ -23,3 +23,5 @@ $(document).on "turbolinks:load", ->
     create_record_toggle($(this).prop("checked"))
   $(".published-field input[type=checkbox]").change ->
     published_field_toggle($(this).prop("checked"))
+  $("input[type=tags]").each ->
+    tagsInput(this)

@@ -31,6 +31,7 @@
     .tags {
       margin: .25em;
       display: flex;
+      flex-wrap: wrap;
       padding-left: 0;
 
       li {
@@ -58,6 +59,7 @@
           }
         }
 
+        &.entry-tag {
         & + li {
           margin-left: 1em;
         }

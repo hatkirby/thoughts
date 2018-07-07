@@ -42,7 +42,7 @@ class Admin::StreamsController < Admin::AdminController
   private
 
     def stream_params
-      params.require(:stream).permit(:title, :body, :slug, records_attributes: [:description, :_destroy])
+      params.require(:stream).permit(:title, :body, :slug, :tag_list, records_attributes: [:description, :_destroy])
     end
 
     def set_section

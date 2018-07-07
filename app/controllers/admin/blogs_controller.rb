@@ -56,7 +56,7 @@ class Admin::BlogsController < Admin::AdminController
   private
 
     def blog_params
-      params.require(:blog).permit(:title, :body, :slug, :published, records_attributes: [:description, :_destroy])
+      params.require(:blog).permit(:title, :body, :slug, :published, :tag_list, records_attributes: [:description, :_destroy])
     end
 
     def set_section

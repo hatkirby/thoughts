@@ -69,3 +69,4 @@ gem 'ckeditor'
 gem 'paperclip'
 gem 'jquery-rails'
 gem 'pokeviewer', github: "hatkirby/pokeviewer"
+gem 'acts-as-taggable-on'

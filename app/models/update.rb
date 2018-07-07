@@ -8,4 +8,8 @@ class Update < ApplicationRecord
   def path
     "/thinks/#{stream.slug}\#update-#{id}"
   end
+
+  def taggable
+    stream
+  end
 end

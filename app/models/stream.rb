@@ -1,6 +1,8 @@
 class Stream < ApplicationRecord
   include Recordable
 
+  acts_as_taggable
+
   has_many :updates
 
   validates :title, presence: true
@@ -8,5 +10,9 @@ class Stream < ApplicationRecord
 
   def path
     "/thinks/#{slug}"
+  end
+
+  def taggable
+    self
   end
 end

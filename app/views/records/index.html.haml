@@ -1,7 +1,1 @@
-%ul#records
-  - @records.each do |record|
-    %li
-      %span.description= link_to record.description, record.recordable.path
-      %ul.tags
-        %li.record-date= record.created_at.strftime("%m.%d.%y")
-        %li.entry-type{ class: "entry-type-#{record.recordable_type.downcase}" }= record.recordable_type
+%ul#records= render @records

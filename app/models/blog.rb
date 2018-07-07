@@ -1,6 +1,8 @@
 class Blog < ApplicationRecord
   include Recordable
 
+  acts_as_taggable
+
   validates :title, presence: true
   validates :body, presence: true, if: :published
   validates :slug, presence: true, format: /\A[-a-z0-9]+\z/, if: :published
@@ -10,6 +12,10 @@ class Blog < ApplicationRecord
 
   def path
     "/says/#{slug}"
+  end
+
+  def taggable
+    self
   end
 
   private

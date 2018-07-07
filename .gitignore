@@ -22,6 +22,7 @@
 /tmux*.log
 *.swp
 tags
+!tags/
 
 .byebug_history
 .DS_Store
