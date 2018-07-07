@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require tags-input
+//= require jquery-ui
+//= require js-routes
 //= require_tree ./admin

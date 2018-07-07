@@ -26,5 +26,11 @@ Rails.application.routes.draw do
 
   get 'thinks/:slug', to: 'streams#show', as: :stream
 
+  resources :tags, only: [], param: :name do
+    collection do
+      get 'suggest'
+    end
+  end
+
   mount Pokeviewer::Engine => '/poke3'
 end

@@ -25,3 +25,6 @@ $(document).on "turbolinks:load", ->
     published_field_toggle($(this).prop("checked"))
   $("input[type=tags]").each ->
     tagsInput(this)
+  $(".tags-input input[type=text]").autocomplete({
+    source: Routes.suggest_tags_path()
+  })

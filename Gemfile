@@ -70,3 +70,5 @@ gem 'paperclip'
 gem 'jquery-rails'
 gem 'pokeviewer', github: "hatkirby/pokeviewer"
 gem 'acts-as-taggable-on'
+gem 'jquery-ui-rails'
+gem 'js-routes'
