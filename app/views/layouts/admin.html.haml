@@ -29,5 +29,9 @@
           = link_to "Streams", admin_streams_url, class: "major-link"
           %ul.minors
             %li.minor= link_to "New stream", new_admin_stream_url
+        %li{major_sidebar_attrs("links")}
+          = link_to "Links", admin_links_url, class: "major-link"
+          %ul.minors
+            %li.minor= link_to "New link", new_admin_link_url
       #main
         = yield

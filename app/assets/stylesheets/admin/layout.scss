@@ -111,6 +111,16 @@ body {
     }
   }
 
+  .url-field {
+    label {
+      display: none;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
   .slug-field {
     display: flex;
     font-size: 0.75em;

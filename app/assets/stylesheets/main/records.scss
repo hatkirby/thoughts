@@ -57,6 +57,10 @@
           &.entry-type-stream, &.entry-type-update {
             background-color: #98FB98;
           }
+          
+          &.entry-type-link {
+            background-color: #FFCC99;
+          }
         }
 
         &.entry-tag {

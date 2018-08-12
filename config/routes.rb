@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :streams, except: [:show] do
       resources :updates, except: [:index, :show]
     end
+
+    resources :links, except: [:show]
   end
 
   mount Ckeditor::Engine => '/ckeditor'

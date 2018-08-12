@@ -1,0 +1,14 @@
+- title "Links"
+%table#entries
+  %tr
+    %th Title
+    %th Date created
+    %th
+  - @links.each do |link|
+    %tr{ class: cycle("even", "odd") }
+      %td= link.title
+      %td= link.created_at.strftime("%B %d, %Y, %l:%M%P")
+      %td
+        %ul.admin-actions
+          %li= link_to "Edit", edit_admin_link_url(link)
+          %li= link_to "Show", link.url
