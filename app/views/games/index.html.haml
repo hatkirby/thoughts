@@ -1,23 +1,26 @@
 - title "Games"
-%h2 Games
+.breadcrumb= link_to "← Back to home page", root_path
+%h2#games-title Games
 %table#games-table
-  %tr
-    %th Title
-    %th Status
-    %th Score
-    %th Progress
-  - @games.each do |game|
-    %tr{ class: cycle("even", "odd") }
-      %td
-        %span.game-title= game.title
-        - unless game.started_on.blank?
-          %span.game-started
-            Started on
-            %time= game.started_on
-        - unless game.finished_on.blank?
-          %span.game-finished
-            Finished on
-            %time= game.finished_on
-      %td= game.status
-      %td= game.score
-      %td.game-progress= simple_format game.progress
+  %thead
+    %tr
+      %th= sortable "title"
+      %th= sortable "status"
+      %th= sortable "score"
+      %th= sortable "progress"
+  %tbody
+    - @games.each do |game|
+      %tr{ class: cycle("even", "odd") }
+        %td
+          %span.game-title= game.title
+          - unless game.started_on.blank?
+            %span.game-started
+              Started on
+              %time= game.started_on
+          - unless game.finished_on.blank?
+            %span.game-finished
+              Finished on
+              %time= game.finished_on
+        %td= game.status
+        %td= game.score
+        %td.game-progress= simple_format game.progress
