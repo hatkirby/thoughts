@@ -72,3 +72,5 @@ gem 'pokeviewer', github: "hatkirby/pokeviewer"
 gem 'acts-as-taggable-on'
 gem 'jquery-ui-rails'
 gem 'js-routes'
+gem 'audited', '~> 4.7'
+gem 'enumerize'

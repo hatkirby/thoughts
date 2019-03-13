@@ -1,0 +1,13 @@
+- title "Games"
+%table#entries
+  %tr
+    %th Title
+    %th Date published
+    %th
+  - @games.each do |game|
+    %tr{ class: cycle("even", "odd") }
+      %td= game.title
+      %td= game.created_at.strftime("%B %d, %Y, %l:%M%P")
+      %td
+        %ul.admin-actions
+          %li= link_to "Edit", edit_admin_game_url(game)

@@ -1,0 +1,23 @@
+%fieldset#content
+  .title-field
+    = f.label :title
+    = f.text_field :title, placeholder: "Title"
+  .description-field
+    = f.label :description
+    = f.cktext_area :description
+%fieldset#details
+  - if f.object.errors.any?
+    #errors.details-module
+      %h3 Error!
+      %ul
+        - f.object.errors.full_messages.each do |error|
+          %li= error
+  .details-module
+    .progress-field
+      = f.label :progress
+      = f.text_area :progress
+  .details-module
+    .status-field
+      = f.select :status, options_for_select(Game.status.values)
+      = f.label :status
+  .details-module= f.submit

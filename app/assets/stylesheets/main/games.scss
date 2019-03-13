@@ -1,0 +1,25 @@
+// Place all the styles related to the GamesController controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#games-table {
+  border-spacing: 0;
+  width: 100%;
+
+  tr {
+    &.even {
+      background-color: #fff;
+    }
+
+    &.odd {
+      background-color: #edf;
+    }
+  }
+
+  td {
+    padding: 0.5em;
+  }
+}
+
+.game-progress p {
+  margin: 0;
+}

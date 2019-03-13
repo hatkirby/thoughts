@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     end
 
     resources :links, except: [:show]
+
+    resources :games, except: [:show]
   end
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -27,6 +29,8 @@ Rails.application.routes.draw do
   get 'says/:slug', to: 'blogs#show', as: :blog
 
   get 'thinks/:slug', to: 'streams#show', as: :stream
+
+  get 'plays', to: 'games#index'
 
   resources :tags, only: [], param: :name do
     collection do

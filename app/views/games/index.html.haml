@@ -1,0 +1,14 @@
+- title "Games"
+%h2 Games
+%table#games-table
+  %tr
+    %th Title
+    %th Status
+    %th Score
+    %th Progress
+  - @games.each do |game|
+    %tr{ class: cycle("even", "odd") }
+      %td= game.title
+      %td= game.status
+      %td= game.score
+      %td.game-progress= simple_format game.progress

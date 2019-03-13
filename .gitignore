@@ -29,3 +29,5 @@ tags
 *.swo
 /public/uploads
 config/database.yml
+
+misc
