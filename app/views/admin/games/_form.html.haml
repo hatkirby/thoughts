@@ -17,7 +17,15 @@
       = f.label :progress
       = f.text_area :progress
   .details-module
+    .started-field
+      = f.label :started_on
+      = f.text_field :started_on, class: "datepicker"
+  .details-module
+    .finished-field
+      = f.label :finished_on
+      = f.text_field :finished_on, class: "datepicker"
+  .details-module
     .status-field
-      = f.select :status, options_for_select(Game.status.values)
+      = f.select :status, options_for_select(Game.status.values, f.object.status)
       = f.label :status
   .details-module= f.submit

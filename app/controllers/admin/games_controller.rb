@@ -46,7 +46,7 @@ class Admin::GamesController < Admin::AdminController
   private
 
     def game_params
-      params.require(:game).permit(:title, :description, :status, :progress, :score)
+      params.require(:game).permit(:title, :description, :status, :progress, :score, :started_on, :finished_on)
     end
 
     def set_section
