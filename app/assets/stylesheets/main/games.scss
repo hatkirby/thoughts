@@ -56,7 +56,10 @@
 
 .game-title {
   display: block;
-  margin-bottom: 0.25em;
+
+  & + span {
+    margin-top: 0.25em;
+  }
 }
 
 .game-started, .game-finished {
