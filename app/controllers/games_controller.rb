@@ -12,10 +12,10 @@ class GamesController < ApplicationController
   private
 
     def sort_column
-      Game.column_names.include?(params[:sort]) ? params[:sort] : "started_on"
+      (params[:sort] and Game.column_names.include?(params[:sort])) ? params[:sort] : "started_on"
     end
 
     def sort_direction
-      %[asc desc].include?(params[:dir]) ? params[:dir] : "asc"
+      (params[:dir] and %[asc desc].include?(params[:dir])) ? params[:dir] : "asc"
     end
 end
