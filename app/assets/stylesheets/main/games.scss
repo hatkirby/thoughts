@@ -6,11 +6,11 @@
   width: 100%;
 
   tr {
-    &.even {
+    &.odd {
       background-color: #fff;
     }
 
-    &.odd {
+    &.even {
       background-color: #edf;
     }
   }
