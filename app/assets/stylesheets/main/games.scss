@@ -23,3 +23,14 @@
 .game-progress p {
   margin: 0;
 }
+
+.game-title {
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+.game-started, .game-finished {
+  display: block;
+  font-size: 0.8em;
+  color: #777;
+}
