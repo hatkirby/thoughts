@@ -17,6 +17,10 @@
       = f.label :progress
       = f.text_area :progress
   .details-module
+    .score-field
+      = f.label :score
+      = f.select :score, 1..10, include_blank: true
+  .details-module
     .started-field
       = f.label :started_on
       = f.text_field :started_on, class: "datepicker"
