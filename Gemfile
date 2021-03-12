@@ -65,7 +65,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml'
 gem 'normalize-rails'
 gem 'devise'
-gem 'ckeditor'
+gem 'ckeditor', '~> 4.2.4'
 gem 'paperclip'
 gem 'jquery-rails'
 gem 'pokeviewer', github: "hatkirby/pokeviewer"
