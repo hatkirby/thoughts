@@ -140,9 +140,10 @@ GEM
     js-routes (2.0.7)
       railties (>= 4)
     libv8 (3.16.14.19)
-    listen (3.0.8)
+    listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     loofah (2.10.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -176,7 +177,8 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     public_suffix (4.0.6)
-    puma (3.12.6)
+    puma (5.3.2)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -213,6 +215,7 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    ruby_dep (1.5.0)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -301,7 +304,7 @@ DEPENDENCIES
   normalize-rails
   paperclip
   pokeviewer!
-  puma (~> 3.7)
+  puma (>= 4.3.8)
   rails (~> 5.2.0)
   sassc-rails
   selenium-webdriver
