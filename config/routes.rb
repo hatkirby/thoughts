@@ -39,4 +39,5 @@ Rails.application.routes.draw do
   end
 
   mount Pokeviewer::Engine => '/poke3'
+  mount Lingo::Engine => '/lingo'
 end

@@ -1,0 +1,1 @@
+Lingo.secret_code = Rails.application.config_for(:lingo)[:secret_code]

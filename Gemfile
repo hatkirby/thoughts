@@ -7,17 +7,18 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 7.0.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
-gem 'puma', '>= 4.3.8'
+#gem 'puma', '>= 6.0.0'
+gem 'webrick', '~> 1.7'
 # Use SCSS for stylesheets
 gem 'sassc-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'node', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -72,6 +73,7 @@ gem 'pokeviewer', github: "hatkirby/pokeviewer"
 gem 'acts-as-taggable-on'
 gem 'jquery-ui-rails'
 gem 'js-routes'
-gem 'audited', '~> 4.7'
+gem 'audited', '~> 5.0'
 gem 'enumerize'
 gem 'sprockets', '3.7.2'
+gem 'lingo', github: "hatkirby/lingo", glob: "rails/*.gemspec", branch: "main"

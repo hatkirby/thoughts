@@ -1,0 +1,4 @@
+production:
+  secret_code: ""
+development:
+  secret_code: "test"
