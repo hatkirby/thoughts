@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/hatkirby/lingo.git
-  revision: 787745956f13bb63c596ed80a53b386708b56508
+  revision: d60d1ca4c2c602b674ab9559a4a29907220d9c45
   branch: main
   glob: rails/*.gemspec
   specs:

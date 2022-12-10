@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_10_170549) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_10_175109) do
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
     t.string "auditable_type"
@@ -69,7 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_170549) do
   end
 
   create_table "lingo_scores", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", limit: 8
     t.string "username"
     t.string "avatar_url"
     t.integer "score"
